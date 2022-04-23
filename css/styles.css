@@ -64,8 +64,8 @@ margin: 0 auto;
 
 .header{
     display: block;
-    padding-top: 24px;
-    padding-bottom: 24px;
+    padding-top: 32px;
+    padding-bottom: 32px;
     border-bottom: 1px solid #ECECEC;
 }
 
@@ -121,7 +121,7 @@ color: #000000;
 
 
 .header-link, .header-mail, .header-tel {
-display: flex;
+display: block;
 align-items: center;
 font-weight: 500;
 font-size: 14px;
@@ -130,9 +130,38 @@ letter-spacing: 0.02em;
 color: var(--header-color)
 }
 
-.header-link.current{
-color: var(--accent-color)
+
+.header-list .current{
+display: block;
+align-items: center;
+font-weight: 500;
+font-size: 14px;
+line-height: 1.14;
+letter-spacing: 0.02em;
+color: var(--accent-color);
+position: relative;
+transition-property: сolor;
+transition-duration: 250ms;
+transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+
+.header-link.current::after{
+
+content: "";
+
+position: absolute;
+bottom: 0;
+left: 0;
+
+display: block;
+width: 100%;
+height: 4px;
+background-color: var(--accent-color);
+border-radius: 2px;
+
+}
+
 
 .header-list{
 display: flex;
@@ -332,6 +361,23 @@ line-height: 1.17;
 text-align: center;
 letter-spacing: 0.03em;
 color: #212121;
+}
+
+.label{
+position: relative;
+}
+
+
+.label-title{
+position: absolute;
+bottom: 0;
+color: #ffffff;
+background-color: rgba(47, 48, 58, 0.8);
+width: 100%;
+height: 70px;
+padding: 27px;
+text-align: center;
+margin-bottom: 0;
 }
 
 /*--------TEAM-------*/
@@ -730,10 +776,42 @@ margin-top: -30px;
 margin-left: -30px;
 }
  
+.description{
+position: relative;
+overflow: hidden;
+}
+
+.description-text{
+position: absolute;
+width: 100%;
+height: 100%;
+top: 0;
+font-weight: 400;
+font-size: 18px;
+line-height: 1.6;
+letter-spacing: 0.03em;
+background-color: rgba(33, 150, 243, 0.9);
+color: #ffffff;
+padding: 63px 24px;
+transform: translateY(100%);
+transition-property: transform;
+transition-duration: 250ms;
+transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.section-item:hover .description-text {
+transform: translateY(0);
+}
+
+
+.section-item:focus .description-text {
+transform: translateY(0);
+}
+
+
 .work-link{
 display: block;
 }
-
 
 
 .work-link:hover,
